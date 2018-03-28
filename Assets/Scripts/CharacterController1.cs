@@ -29,11 +29,14 @@ public class CharacterController1 : MonoBehaviour
         spawnwall();
 
        transform.TransformDirection(-Vector3.forward * 2);
-    
-
-
     }
-
+    void OnTriggerEnter(Collider co) {
+    // Not the current wall?
+    if (co != wall) {
+        print("Player lost:" + name);
+        Destroy(gameObject);
+    }
+}
     void spawnwall()
     {
         lastWallEnd = transform.position;
