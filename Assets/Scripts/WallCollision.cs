@@ -6,7 +6,7 @@ public class WallCollision : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision) {
 		if(collision.transform.tag == "Player") {
-			Destroy(gameObject);
+			Destroy(collision.gameObject);
 		}
 	}
 }
